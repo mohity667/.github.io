@@ -102,25 +102,21 @@
     let wordIdx = 0;
     let charIdx = 0;
     let isErasing = false;
-    let isPaused = false;
 
     const tick = () => {
       if (prefersReducedMotion) {
         typedEl.textContent = words[0];
         return;
       }
-      if (isPaused) return;
 
       const word = words[wordIdx];
       if (!isErasing) {
         charIdx++;
         typedEl.textContent = word.slice(0, charIdx);
         if (charIdx >= word.length) {
-          isPaused = true;
-          window.setTimeout(() => {
-            isPaused = false;
-            isErasing = true;
-          }, holdMs);
+          isErasing = true;
+          window.setTimeout(tick, holdMs);
+          return;
         }
         window.setTimeout(tick, typeSpeed);
       } else {
@@ -129,10 +125,8 @@
         if (charIdx <= 0) {
           isErasing = false;
           wordIdx = (wordIdx + 1) % words.length;
-          isPaused = true;
-          window.setTimeout(() => {
-            isPaused = false;
-          }, betweenMs);
+          window.setTimeout(tick, betweenMs);
+          return;
         }
         window.setTimeout(tick, eraseSpeed);
       }

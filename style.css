@@ -266,6 +266,7 @@ textarea {
 .hero-grid {
   display: grid;
   gap: 18px;
+  align-items: center;
 }
 
 .hero-copy {
@@ -313,8 +314,9 @@ textarea {
 .hero-tagline {
   margin: 14px 0 0;
   color: var(--muted);
-  font-size: clamp(1.02rem, 0.95rem + 0.6vw, 1.15rem);
+  font-size: clamp(1.15rem, 1rem + 0.8vw, 1.55rem);
   max-width: 62ch;
+  min-height: 2.2em;
 }
 
 .typed {
@@ -350,6 +352,20 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.hero-photo {
+  z-index: 1;
+  justify-self: center;
+}
+
+.profile-image {
+  width: min(360px, 84vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid color-mix(in srgb, var(--border) 65%, var(--accent) 35%);
+  box-shadow: var(--shadow);
 }
 
 .btn {
@@ -1101,8 +1117,35 @@ textarea:focus {
 
 /* Layout upgrades for larger screens */
 @media (min-width: 860px) {
+  body {
+    padding-left: 250px;
+  }
+
+  .site-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    border-right: 1px solid var(--border);
+    border-bottom: 0;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+  }
+
   .nav {
-    grid-template-columns: 1fr auto;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 14px;
+    padding: 16px 14px;
+  }
+
+  .brand {
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--bg-elev) 70%, transparent);
   }
 
   .nav-toggle {
@@ -1110,11 +1153,17 @@ textarea:focus {
   }
 
   .nav-links {
-    display: inline-flex;
+    display: grid;
+    gap: 8px;
+    justify-content: stretch;
+  }
+
+  .nav-links a {
+    padding: 10px 12px;
   }
 
   .hero-grid {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
     gap: 22px;
   }
