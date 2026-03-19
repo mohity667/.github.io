@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      Portfolio — Mohit Yadav
+      Edit content in this file. Colors/spacing live in style.css.
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>Mohit Yadav — Analytics Engineer</title>
+    <meta
+      name="description"
+      content="Mohit Yadav — Analytics Engineer. Data modeling, analytics pipelines, BI dashboards, automation, and experimentation."
+    />
+
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:title" content="Mohit Yadav — Analytics Engineer" />
+    <meta
+      property="og:description"
+      content="Portfolio showcasing analytics engineering, BI, automation, and data products."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="./" />
+    <!-- Replace with a real image (recommended 1200x630) once you have one -->
+    <meta property="og:image" content="./assets/og-image.png" />
+
+    <!-- Favicons (optional). If you add icons, keep paths relative. -->
+    <link rel="icon" href="./favicon.ico" />
+
+    <!-- Fonts (allowed dependency) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (optional dependency) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      // Theme: apply ASAP to prevent flash.
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true">MY</span>
+          <span class="brand-text">Mohit Yadav</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="nav-links"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle dark/light theme"
+            title="Toggle theme"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="section hero" aria-label="Hero">
+        <canvas
+          class="hero-canvas"
+          id="hero-canvas"
+          aria-hidden="true"
+        ></canvas>
+
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">
+              New York, NY <span class="dot" aria-hidden="true"></span>
+              Open to opportunities
+            </p>
+
+            <h1 class="hero-title">
+              Mohit Yadav
+              <span class="hero-title-sub">Analytics Engineer</span>
+            </h1>
+
+            <p class="hero-tagline">
+              I build
+              <span class="typed" data-typed></span>
+              that turn complex data into confident decisions.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#projects">
+                <i class="fa-solid fa-grid-2" aria-hidden="true"></i>
+                <span>View Work</span>
+              </a>
+              <a class="btn btn-ghost" href="#contact">
+                <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <a class="chip" href="mailto:mohity667@gmail.com">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                <span>mohity667@gmail.com</span>
+              </a>
+              <a class="chip" href="tel:+16696490755">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>669-649-0755</span>
+              </a>
+              <a
+                class="chip"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn (placeholder)"
+              >
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-card reveal" data-delay="120">
+            <div class="profile">
+              <!--
+                Photo swap:
+                - Replace the placeholder with an <img> tag pointing to ./assets/profile.jpg
+                - Or keep it as initials if you prefer.
+              -->
+              <div class="avatar" role="img" aria-label="Profile photo placeholder">
+                <span class="avatar-initials">MY</span>
+              </div>
+
+              <div class="profile-details">
+                <p class="profile-role">Analytics • BI • Automation</p>
+                <p class="profile-sub">
+                  5+ years building data models, pipelines, dashboards, and
+                  experimentation frameworks.
+                </p>
+              </div>
+            </div>
+
+            <div class="stats" role="list" aria-label="Key impact stats">
+              <div class="stat" role="listitem">
+                <p class="stat-kpi">80%</p>
+                <p class="stat-label">manual processing automated</p>
+              </div>
+              <div class="stat" role="listitem">
+                <p class="stat-kpi">100+</p>
+                <p class="stat-label">hours/month saved</p>
+              </div>
+              <div class="stat" role="listitem">
+                <p class="stat-kpi">18%</p>
+                <p class="stat-label">no-show rate reduction</p>
+              </div>
+            </div>
+
+            <div class="mini-stack" aria-label="Core stack">
+              <span class="tag">SQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">dbt</span>
+              <span class="tag">Airflow</span>
+              <span class="tag">Plotly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span class="scroll-cue-line"></span>
+          <span class="scroll-cue-text">Scroll</span>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about" aria-label="About">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">About</h2>
+            <p class="section-subtitle">
+              Analytics Engineer with a product mindset—fast iterations, clear
+              storytelling, measurable outcomes.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="card glass reveal">
+              <h3 class="card-title">Short bio</h3>
+              <p class="muted">
+                I build scalable analytics pipelines and decision-ready dashboards
+                across operational and financial workflows. I’m strongest at
+                turning messy, multi-source data into reliable metrics—then
+                translating those metrics into practical recommendations that
+                improve efficiency, revenue, and customer experience.
+              </p>
+              <div class="facts">
+                <div class="fact">
+                  <p class="fact-label">Location</p>
+                  <p class="fact-value">New York, NY</p>
+                </div>
+                <div class="fact">
+                  <p class="fact-label">Focus</p>
+                  <p class="fact-value">Analytics Engineering + BI</p>
+                </div>
+                <div class="fact">
+                  <p class="fact-label">Tools</p>
+                  <p class="fact-value">SQL · Python · Power BI · dbt</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card reveal" data-delay="120">
+              <h3 class="card-title">What I’m known for</h3>
+              <ul class="checklist">
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  <span>Turning complex datasets into clear recommendations</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  <span>Automating repeatable reporting and quality checks</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  <span>Designing dashboards people actually use</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-check" aria-hidden="true"></i>
+                  <span>Partnering with stakeholders to define KPIs & decisions</span>
+                </li>
+              </ul>
+
+              <div class="about-badges">
+                <span class="pill">RLS / Subscriptions</span>
+                <span class="pill">A/B Testing</span>
+                <span class="pill">Data Modeling</span>
+                <span class="pill">Automation</span>
+                <span class="pill">Storytelling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section" id="skills" aria-label="Skills">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">
+              A practical toolkit for shipping analytics products end-to-end.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="card reveal glass">
+              <h3 class="card-title">Programming</h3>
+              <div class="skillbars" aria-label="Programming skill levels">
+                <div class="skillbar">
+                  <div class="skillbar-head">
+                    <span>SQL</span><span class="muted">Advanced</span>
+                  </div>
+                  <div class="bar" role="progressbar" aria-label="SQL" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                    <span style="--w: 92%"></span>
+                  </div>
+                </div>
+                <div class="skillbar">
+                  <div class="skillbar-head">
+                    <span>Python</span><span class="muted">Advanced</span>
+                  </div>
+                  <div class="bar" role="progressbar" aria-label="Python" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                    <span style="--w: 88%"></span>
+                  </div>
+                </div>
+                <div class="skillbar">
+                  <div class="skillbar-head">
+                    <span>DAX</span><span class="muted">Strong</span>
+                  </div>
+                  <div class="bar" role="progressbar" aria-label="DAX" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                    <span style="--w: 78%"></span>
+                  </div>
+                </div>
+                <div class="skillbar">
+                  <div class="skillbar-head">
+                    <span>Markdown</span><span class="muted">Strong</span>
+                  </div>
+                  <div class="bar" role="progressbar" aria-label="Markdown" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <span style="--w: 80%"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card reveal" data-delay="120">
+              <h3 class="card-title">Data Platforms</h3>
+              <div class="badge-grid" aria-label="Data platforms">
+                <span class="badge">Databricks</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">SSMS</span>
+              </div>
+              <h3 class="card-title spacer">Analytics & BI</h3>
+              <div class="badge-grid" aria-label="Analytics and BI tools">
+                <span class="badge">Power BI</span>
+                <span class="badge">Tableau</span>
+                <span class="badge">Hex</span>
+                <span class="badge">Semantic Models</span>
+                <span class="badge">Dashboard Design</span>
+                <span class="badge">Statistical Analysis</span>
+              </div>
+            </div>
+
+            <div class="card reveal glass" data-delay="220">
+              <h3 class="card-title">Data Engineering</h3>
+              <div class="badge-grid" aria-label="Data engineering skills">
+                <span class="badge">ETL / ELT</span>
+                <span class="badge">Process Automation</span>
+                <span class="badge">Azure DevOps</span>
+                <span class="badge">Git</span>
+                <span class="badge">Airflow</span>
+                <span class="badge">dbt</span>
+                <span class="badge">Docker</span>
+              </div>
+              <h3 class="card-title spacer">Business Focus</h3>
+              <div class="badge-grid" aria-label="Business skills">
+                <span class="badge">KPI Reporting</span>
+                <span class="badge">Workflow Optimization</span>
+                <span class="badge">Quality Improvement</span>
+                <span class="badge">Benchmarking</span>
+                <span class="badge">A/B Testing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience" aria-label="Experience">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">
+              Highlights that show impact, not just responsibilities.
+            </p>
+          </div>
+
+          <div class="timeline" aria-label="Work experience timeline">
+            <article class="timeline-item reveal">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3 class="timeline-title">Business Intelligence Analyst</h3>
+                    <p class="timeline-company">University of Missouri Health Care</p>
+                  </div>
+                  <p class="timeline-dates">Jun 2023 — Present</p>
+                </div>
+                <ul class="bullets">
+                  <li>
+                    Engineered a scalable web scraping + visualization pipeline
+                    (BeautifulSoup, Plotly, Papermill) to automate ~80% of manual
+                    processing and improve cross-department reporting.
+                  </li>
+                  <li>
+                    Built a no-show reporting workflow with predictive analytics,
+                    reducing no-show rates by 18% and improving scheduling efficiency.
+                  </li>
+                  <li>
+                    Shipped a real-time discharge follow-up dashboard (RLS + daily
+                    subscriptions) for 15+ clinics, increasing follow-up appointments
+                    from 17% to 22% and boosting TCM billing revenue.
+                  </li>
+                  <li>
+                    Automated multi-source ETL (SQL/Python, Azure DevOps) for a DNV
+                    Ortho COE dashboard—saving 8+ hours/week and enabling real-time
+                    compliance tracking across 5+ standards.
+                  </li>
+                  <li>
+                    Replaced manual SQL pulls with a self-serve analytics tool, saving
+                    100+ hours/month and increasing stakeholder autonomy.
+                  </li>
+                  <li>
+                    Built a Vizient readmissions dashboard and drove workflow fixes,
+                    contributing to a 2% reduction in readmissions.
+                  </li>
+                  <li>
+                    Optimized clinic capacity using utilization analysis, reallocating
+                    underused slots to lift utilization 30% and avoid expansion costs.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal" data-delay="120">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <div>
+                    <h3 class="timeline-title">Data Analyst</h3>
+                    <p class="timeline-company">BJC Health Care</p>
+                  </div>
+                  <p class="timeline-dates">May 2022 — May 2023</p>
+                </div>
+                <ul class="bullets">
+                  <li>
+                    Analyzed the patient booking funnel and identified workflow friction,
+                    increasing online scheduling conversion by 1.5%.
+                  </li>
+                  <li>
+                    Uncovered a 2.5% new-patient growth opportunity by analyzing trends
+                    and recommending online self-scheduling for mammography.
+                  </li>
+                  <li>
+                    Partnered with UI/UX teams to run A/B tests informed by Hotjar,
+                    driving incremental improvements to appointment conversion.
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects" aria-label="Projects">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">
+              A few builds that show how I think: product clarity + technical rigor.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card reveal glass">
+              <div class="project-top">
+                <h3 class="project-title">AI‑Assisted KPI Copilot</h3>
+                <p class="project-desc">
+                  Self‑serve KPI Q&amp;A for non‑technical users—plain‑English answers,
+                  charts, and metric definitions in one place. Reduced time to answer
+                  common KPI questions by ~70% and cut routine analyst requests by ~40%.
+                </p>
+              </div>
+              <div class="project-tags" aria-label="Tech stack tags">
+                <span class="tag">Python</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Plotly</span>
+                <span class="tag">LLM APIs</span>
+              </div>
+              <div class="project-links">
+                <a class="link" href="#" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  <span>GitHub</span>
+                </a>
+                <a class="link" href="#" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-delay="120">
+              <div class="project-top">
+                <h3 class="project-title">Modern Analytics Engineering Pipeline</h3>
+                <p class="project-desc">
+                  Automated raw-to-mart data flows with validation checks, improving
+                  refresh reliability to 90%+ and reducing manual pipeline effort by 60%.
+                </p>
+              </div>
+              <div class="project-tags" aria-label="Tech stack tags">
+                <span class="tag">Airflow 3</span>
+                <span class="tag">dbt Core</span>
+                <span class="tag">Cosmos</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Git</span>
+              </div>
+              <div class="project-links">
+                <a class="link" href="#" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  <span>GitHub</span>
+                </a>
+                <a class="link" href="#" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card reveal glass" data-delay="220">
+              <div class="project-top">
+                <h3 class="project-title">Clinic Capacity Optimizer</h3>
+                <p class="project-desc">
+                  A capacity and utilization analysis workflow to identify underused
+                  slots and reallocate scheduling templates—lifting utilization by 30%.
+                </p>
+              </div>
+              <div class="project-tags" aria-label="Tech stack tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">Forecasting</span>
+              </div>
+              <div class="project-links">
+                <a class="link" href="#" target="_blank" rel="noreferrer">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  <span>GitHub</span>
+                </a>
+                <a class="link" href="#" target="_blank" rel="noreferrer">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section" id="education" aria-label="Education">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Strong fundamentals, applied constantly.</p>
+          </div>
+
+          <div class="edu-grid">
+            <article class="card reveal">
+              <h3 class="card-title">University of Missouri</h3>
+              <p class="muted">Master of Science in Data Science &amp; Analytics</p>
+              <div class="edu-meta">
+                <span class="pill">Columbia, MO</span>
+                <span class="pill">GPA 3.85/4.0</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="section" id="certifications" aria-label="Certifications">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-subtitle">
+              Add badges here as you earn them (this section is ready).
+            </p>
+          </div>
+
+          <div class="cert-grid">
+            <div class="cert reveal glass">
+              <div class="cert-badge" aria-hidden="true">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <p class="cert-title">Certification Name</p>
+                <p class="muted">Issuer • Year</p>
+              </div>
+            </div>
+            <div class="cert reveal" data-delay="120">
+              <div class="cert-badge" aria-hidden="true">
+                <i class="fa-solid fa-badge-check"></i>
+              </div>
+              <div>
+                <p class="cert-title">Certification Name</p>
+                <p class="muted">Issuer • Year</p>
+              </div>
+            </div>
+            <div class="cert reveal glass" data-delay="220">
+              <div class="cert-badge" aria-hidden="true">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <div>
+                <p class="cert-title">Certification Name</p>
+                <p class="muted">Issuer • Year</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact" aria-label="Contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">
+              Want to collaborate or talk roles? Send a quick note.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card reveal glass">
+              <h3 class="card-title">Find me</h3>
+              <div class="contact-items">
+                <a class="contact-item" href="mailto:mohity667@gmail.com">
+                  <span class="contact-icon" aria-hidden="true">
+                    <i class="fa-regular fa-envelope"></i>
+                  </span>
+                  <span>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">mohity667@gmail.com</span>
+                  </span>
+                </a>
+                <a class="contact-item" href="tel:+16696490755">
+                  <span class="contact-icon" aria-hidden="true">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-value">669-649-0755</span>
+                  </span>
+                </a>
+                <a class="contact-item" href="#" target="_blank" rel="noreferrer">
+                  <span class="contact-icon" aria-hidden="true">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </span>
+                  <span>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">Add your profile URL</span>
+                  </span>
+                </a>
+                <a class="contact-item" href="#" target="_blank" rel="noreferrer">
+                  <span class="contact-icon" aria-hidden="true">
+                    <i class="fa-brands fa-github"></i>
+                  </span>
+                  <span>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">Add your profile URL</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="card reveal" data-delay="120">
+              <h3 class="card-title">Send a message</h3>
+              <!--
+                This form uses mailto so it works on GitHub Pages with no backend.
+                It will open the user's email client with a pre-filled message.
+              -->
+              <form class="form" id="contact-form" novalidate>
+                <label class="field">
+                  <span class="field-label">Your name</span>
+                  <input
+                    type="text"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Jane Doe"
+                    required
+                  />
+                </label>
+
+                <label class="field">
+                  <span class="field-label">Your email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="jane@email.com"
+                    required
+                  />
+                </label>
+
+                <label class="field">
+                  <span class="field-label">Message</span>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Hi Mohit — I’d love to connect about…"
+                    required
+                  ></textarea>
+                </label>
+
+                <div class="form-actions">
+                  <button class="btn btn-primary" type="submit">
+                    <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                    <span>Email Me</span>
+                  </button>
+                  <p class="form-hint muted" id="form-hint">
+                    Opens your email app with the message pre-filled.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <p class="muted">
+          © <span id="year"></span> Mohit Yadav. Built with HTML/CSS/JS.
+        </p>
+        <div class="footer-links" aria-label="Footer social links">
+          <a class="icon-link" href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn (placeholder)">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noreferrer" aria-label="GitHub (placeholder)">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="icon-link" href="mailto:mohity667@gmail.com" aria-label="Email Mohit">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
