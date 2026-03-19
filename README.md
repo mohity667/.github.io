@@ -68,5 +68,5 @@ If you use the `<img>` approach, also add this CSS to `style.css` (near the `.av
 
 - Everything uses **relative paths** (safe for GitHub Pages).
 - The contact form uses **mailto:** so it works without any backend.
-- Dark/light mode is stored in `localStorage`.
+- Theme is set to permanent dark mode.
 

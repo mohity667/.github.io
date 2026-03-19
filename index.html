@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <!--
       Portfolio — Mohit Yadav
@@ -7,7 +7,7 @@
     -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="dark" />
 
     <title>Mohit Yadav — Analytics Engineer</title>
     <meta
@@ -45,18 +45,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./style.css" />
-    <script>
-      // Theme: apply ASAP to prevent flash.
-      (() => {
-        const saved = localStorage.getItem("theme");
-        const prefersDark =
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = saved || (prefersDark ? "dark" : "light");
-        document.documentElement.dataset.theme = theme;
-      })();
-    </script>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -89,16 +78,6 @@
           <a href="#contact">Contact</a>
         </div>
 
-        <div class="nav-actions">
-          <button
-            class="theme-toggle"
-            type="button"
-            aria-label="Toggle dark/light theme"
-            title="Toggle theme"
-          >
-            <span class="theme-toggle-icon" aria-hidden="true"></span>
-          </button>
-        </div>
       </nav>
     </header>
 
@@ -113,21 +92,11 @@
 
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">
-              New York, NY <span class="dot" aria-hidden="true"></span>
-              Open to opportunities
-            </p>
+            <p class="eyebrow">Open to opportunities</p>
 
-            <h1 class="hero-title">
-              Mohit Yadav
-              <span class="hero-title-sub">Analytics Engineer</span>
-            </h1>
+            <h1 class="hero-title">Mohit Yadav</h1>
 
-            <p class="hero-tagline">
-              I build
-              <span class="typed" data-typed></span>
-              that turn complex data into confident decisions.
-            </p>
+            <p class="hero-tagline"><span class="typed" data-typed></span></p>
 
             <div class="hero-cta">
               <a class="btn btn-primary" href="#projects">
@@ -151,10 +120,10 @@
               </a>
               <a
                 class="chip"
-                href="#"
+                href="https://www.linkedin.com/in/mohity667"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="LinkedIn (placeholder)"
+                aria-label="LinkedIn profile"
               >
                 <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                 <span>LinkedIn</span>
@@ -237,8 +206,8 @@
               </p>
               <div class="facts">
                 <div class="fact">
-                  <p class="fact-label">Location</p>
-                  <p class="fact-value">New York, NY</p>
+                  <p class="fact-label">Experience</p>
+                  <p class="fact-value">5+ years</p>
                 </div>
                 <div class="fact">
                   <p class="fact-label">Focus</p>
@@ -294,84 +263,61 @@
             </p>
           </div>
 
-          <div class="skills-grid">
-            <div class="card reveal glass">
-              <h3 class="card-title">Programming</h3>
-              <div class="skillbars" aria-label="Programming skill levels">
-                <div class="skillbar">
-                  <div class="skillbar-head">
-                    <span>SQL</span><span class="muted">Advanced</span>
-                  </div>
-                  <div class="bar" role="progressbar" aria-label="SQL" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                    <span style="--w: 92%"></span>
-                  </div>
-                </div>
-                <div class="skillbar">
-                  <div class="skillbar-head">
-                    <span>Python</span><span class="muted">Advanced</span>
-                  </div>
-                  <div class="bar" role="progressbar" aria-label="Python" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
-                    <span style="--w: 88%"></span>
-                  </div>
-                </div>
-                <div class="skillbar">
-                  <div class="skillbar-head">
-                    <span>DAX</span><span class="muted">Strong</span>
-                  </div>
-                  <div class="bar" role="progressbar" aria-label="DAX" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
-                    <span style="--w: 78%"></span>
-                  </div>
-                </div>
-                <div class="skillbar">
-                  <div class="skillbar-head">
-                    <span>Markdown</span><span class="muted">Strong</span>
-                  </div>
-                  <div class="bar" role="progressbar" aria-label="Markdown" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    <span style="--w: 80%"></span>
-                  </div>
-                </div>
+          <div class="skills-modern card glass reveal" aria-label="Skill categories and proficiency">
+            <article class="skill-row">
+              <div class="skill-row-head">
+                <h3 class="skill-category">Programming</h3>
+                <span class="skill-level">Advanced</span>
               </div>
-            </div>
+              <p class="skill-list">SQL, Python, DAX</p>
+              <div class="bar" role="progressbar" aria-label="Programming" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                <span style="--w: 88%"></span>
+              </div>
+            </article>
 
-            <div class="card reveal" data-delay="120">
-              <h3 class="card-title">Data Platforms</h3>
-              <div class="badge-grid" aria-label="Data platforms">
-                <span class="badge">Databricks</span>
-                <span class="badge">PostgreSQL</span>
-                <span class="badge">MySQL</span>
-                <span class="badge">SSMS</span>
+            <article class="skill-row">
+              <div class="skill-row-head">
+                <h3 class="skill-category">Data Platforms</h3>
+                <span class="skill-level">Advanced</span>
               </div>
-              <h3 class="card-title spacer">Analytics & BI</h3>
-              <div class="badge-grid" aria-label="Analytics and BI tools">
-                <span class="badge">Power BI</span>
-                <span class="badge">Tableau</span>
-                <span class="badge">Hex</span>
-                <span class="badge">Semantic Models</span>
-                <span class="badge">Dashboard Design</span>
-                <span class="badge">Statistical Analysis</span>
+              <p class="skill-list">Databricks, PostgreSQL, MySQL, Snowflake, Google Analytics</p>
+              <div class="bar" role="progressbar" aria-label="Data Platforms" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100">
+                <span style="--w: 83%"></span>
               </div>
-            </div>
+            </article>
 
-            <div class="card reveal glass" data-delay="220">
-              <h3 class="card-title">Data Engineering</h3>
-              <div class="badge-grid" aria-label="Data engineering skills">
-                <span class="badge">ETL / ELT</span>
-                <span class="badge">Process Automation</span>
-                <span class="badge">Azure DevOps</span>
-                <span class="badge">Git</span>
-                <span class="badge">Airflow</span>
-                <span class="badge">dbt</span>
-                <span class="badge">Docker</span>
+            <article class="skill-row">
+              <div class="skill-row-head">
+                <h3 class="skill-category">Analytics &amp; BI</h3>
+                <span class="skill-level">Expert</span>
               </div>
-              <h3 class="card-title spacer">Business Focus</h3>
-              <div class="badge-grid" aria-label="Business skills">
-                <span class="badge">KPI Reporting</span>
-                <span class="badge">Workflow Optimization</span>
-                <span class="badge">Quality Improvement</span>
-                <span class="badge">Benchmarking</span>
-                <span class="badge">A/B Testing</span>
+              <p class="skill-list">Tableau, Power BI, Data Modeling, Statistical Analysis</p>
+              <div class="bar" role="progressbar" aria-label="Analytics and BI" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
+                <span style="--w: 93%"></span>
               </div>
-            </div>
+            </article>
+
+            <article class="skill-row">
+              <div class="skill-row-head">
+                <h3 class="skill-category">Data Engineering</h3>
+                <span class="skill-level">Intermediate/Advanced</span>
+              </div>
+              <p class="skill-list">ETL/ELT Pipelines, dbt Core, Apache Airflow, Azure DevOps, Git</p>
+              <div class="bar" role="progressbar" aria-label="Data Engineering" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
+                <span style="--w: 76%"></span>
+              </div>
+            </article>
+
+            <article class="skill-row">
+              <div class="skill-row-head">
+                <h3 class="skill-category">Business Focus</h3>
+                <span class="skill-level">Expert</span>
+              </div>
+              <p class="skill-list">KPI Reporting, Workflow Optimization, Quality Improvement, Benchmarking, A/B Testing</p>
+              <div class="bar" role="progressbar" aria-label="Business Focus" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                <span style="--w: 92%"></span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -570,7 +516,6 @@
               <h3 class="card-title">University of Missouri</h3>
               <p class="muted">Master of Science in Data Science &amp; Analytics</p>
               <div class="edu-meta">
-                <span class="pill">Columbia, MO</span>
                 <span class="pill">GPA 3.85/4.0</span>
               </div>
             </article>
@@ -652,7 +597,7 @@
                     <span class="contact-value">669-649-0755</span>
                   </span>
                 </a>
-                <a class="contact-item" href="#" target="_blank" rel="noreferrer">
+                <a class="contact-item" href="https://www.linkedin.com/in/mohity667" target="_blank" rel="noreferrer">
                   <span class="contact-icon" aria-hidden="true">
                     <i class="fa-brands fa-linkedin"></i>
                   </span>
@@ -734,7 +679,7 @@
           © <span id="year"></span> Mohit Yadav. Built with HTML/CSS/JS.
         </p>
         <div class="footer-links" aria-label="Footer social links">
-          <a class="icon-link" href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn (placeholder)">
+          <a class="icon-link" href="https://www.linkedin.com/in/mohity667" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
             <i class="fa-brands fa-linkedin"></i>
           </a>
           <a class="icon-link" href="#" target="_blank" rel="noreferrer" aria-label="GitHub (placeholder)">
@@ -747,6 +692,6 @@
       </div>
     </footer>
 
-    <script src="./script.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

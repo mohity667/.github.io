@@ -20,27 +20,6 @@
   const year = $("#year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Theme toggle
-  const themeToggle = $(".theme-toggle");
-  const setTheme = (theme) => {
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem("theme", theme);
-  };
-
-  const getTheme = () =>
-    document.documentElement.dataset.theme ||
-    localStorage.getItem("theme") ||
-    "dark";
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const current = getTheme();
-      setTheme(current === "dark" ? "light" : "dark");
-      // Repaint canvas subtly for new colors
-      window.dispatchEvent(new Event("themechange"));
-    });
-  }
-
   // Mobile nav
   const navToggle = $(".nav-toggle");
   const navLinks = $("#nav-links");
@@ -110,11 +89,9 @@
   const typedEl = $("[data-typed]");
   if (typedEl) {
     const words = [
-      "data models",
-      "analytics pipelines",
-      "decision-ready dashboards",
-      "automated reporting",
-      "experimentation insights",
+      "I am an Analytics Engineer",
+      "I am a Data Analyst",
+      "I am a BI Analyst",
     ];
 
     const typeSpeed = 26;
@@ -325,10 +302,6 @@
 
     const onResize = () => start();
     window.addEventListener("resize", onResize, { passive: true });
-    window.addEventListener("themechange", () => {
-      // gentle refresh; dot positions stay
-    });
-
     start();
   }
 })();

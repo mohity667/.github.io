@@ -38,20 +38,6 @@
   --nav-h: 64px;
 }
 
-/* Light theme */
-html[data-theme="light"] {
-  --bg: #f7fafc;
-  --bg-elev: rgba(7, 20, 31, 0.04);
-  --bg-elev-2: rgba(7, 20, 31, 0.06);
-  --text: rgba(7, 20, 31, 0.92);
-  --muted: rgba(7, 20, 31, 0.68);
-  --faint: rgba(7, 20, 31, 0.55);
-  --border: rgba(7, 20, 31, 0.12);
-  --shadow: 0 16px 55px rgba(7, 20, 31, 0.18);
-  --shadow-soft: 0 12px 32px rgba(7, 20, 31, 0.12);
-  --accent-ink: #052022;
-}
-
 *,
 *::before,
 *::after {
@@ -143,7 +129,7 @@ textarea {
 .nav {
   height: var(--nav-h);
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 12px;
 }
@@ -236,36 +222,6 @@ textarea {
   background: var(--bg-elev);
   border-color: var(--border);
   transform: translateY(-1px);
-}
-
-.nav-actions {
-  display: inline-flex;
-  justify-content: flex-end;
-}
-
-.theme-toggle {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
-  cursor: pointer;
-  box-shadow: none;
-  transition: transform 120ms ease, background 120ms ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px);
-  background: var(--bg-elev-2);
-}
-
-.theme-toggle-icon {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--bg) 60%, transparent);
 }
 
 .section {
@@ -708,23 +664,49 @@ textarea {
 }
 
 /* SKILLS */
-.skills-grid {
-  display: grid;
-  gap: var(--gap);
+.skills-modern {
   margin-top: 14px;
-}
-
-.skillbars {
+  max-width: 900px;
+  margin-inline: auto;
   display: grid;
-  gap: 12px;
+  gap: 18px;
 }
 
-.skillbar-head {
+.skill-row {
+  display: grid;
+  gap: 10px;
+}
+
+.skill-row + .skill-row {
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.skill-row-head {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  font-weight: 800;
+  align-items: center;
+}
+
+.skill-category {
+  margin: 0;
+  font-size: 1.03rem;
   letter-spacing: -0.01em;
+}
+
+.skill-level {
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 0.92rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.skill-list {
+  margin: 0;
+  color: var(--muted);
 }
 
 .bar {
@@ -1139,10 +1121,6 @@ textarea:focus {
 
   .about-grid {
     grid-template-columns: 1.1fr 0.9fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .projects-grid {
