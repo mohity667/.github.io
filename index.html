@@ -379,69 +379,38 @@
       <section class="section" id="experience" aria-label="Experience">
         <div class="container">
           <div class="section-head reveal">
+            <p class="section-kicker">PROFESSIONAL JOURNEY</p>
             <h2 class="section-title">Experience</h2>
           </div>
 
-          <div class="experience-showcase" aria-label="Work experience showcase">
-            <article class="experience-card reveal">
-              <div class="experience-head">
-                <p class="experience-company">University of Missouri Health Care</p>
+          <div class="experience-rail" aria-label="Work experience timeline showcase">
+            <article class="experience-rail-item reveal">
+              <div class="experience-dot" aria-hidden="true"></div>
+              <div class="experience-card">
+                <h3 class="experience-role">Business Intelligence Analyst - University of Missouri Health Care</h3>
+                <p class="experience-period">June 2023 - Present</p>
                 <p class="experience-meta">Columbia, MO</p>
-              </div>
-              <div class="experience-role-line">
-                <h3 class="experience-role">Business Intelligence Analyst</h3>
-                <p class="experience-dates">June 2023 - Present</p>
-              </div>
-              <div class="experience-highlights">
-                <p>
-                  Built a scalable Python pipeline (BeautifulSoup, Plotly, Papermill)
-                  for JSON extraction and analytics delivery, automating nearly 80% of
-                  manual reporting prep across teams.
-                </p>
-                <p>
-                  Designed a predictive no-show workflow that surfaced high-risk
-                  appointments early, contributing to an 18% reduction in no-show rates
-                  and better scheduling efficiency.
-                </p>
-                <p>
-                  Launched a real-time discharge follow-up dashboard with row-level
-                  security and daily Power BI alerts for 15+ clinics, improving
-                  follow-up performance from 17% to 22% and increasing TCM revenue.
-                </p>
-                <p>
-                  Replaced manual SQL pulls with a self-serve analytics product, saving
-                  100+ hours per month while improving reporting consistency.
-                </p>
-                <p>
-                  Improved clinic capacity planning through SQL/Python/BI analysis,
-                  reallocating underused slots and lifting utilization by 30%.
-                </p>
+                <ul class="experience-list">
+                  <li>Engineered a scalable Python pipeline (BeautifulSoup, Plotly, Papermill) to automate ~80% of manual data preparation and improve cross-team reporting speed.</li>
+                  <li>Built a predictive no-show workflow that identified high-risk appointments in advance, helping reduce no-show rates by 18%.</li>
+                  <li>Developed a real-time discharge follow-up dashboard (RLS + daily Power BI alerts) for 15+ clinics, improving follow-up rates from 17% to 22%.</li>
+                  <li>Automated clinic reporting with a self-serve analytics solution, eliminating 100+ hours/month of manual SQL pulls.</li>
+                  <li>Optimized clinic capacity using SQL/Python/BI reallocation workflows, lifting utilization by 30%.</li>
+                </ul>
               </div>
             </article>
 
-            <article class="experience-card reveal" data-delay="120">
-              <div class="experience-head">
-                <p class="experience-company">BJC Health Care</p>
+            <article class="experience-rail-item reveal" data-delay="120">
+              <div class="experience-dot" aria-hidden="true"></div>
+              <div class="experience-card">
+                <h3 class="experience-role">Data Analyst - BJC Health Care</h3>
+                <p class="experience-period">May 2022 - May 2023</p>
                 <p class="experience-meta">Saint Louis, MO</p>
-              </div>
-              <div class="experience-role-line">
-                <h3 class="experience-role">Data Analyst</h3>
-                <p class="experience-dates">May 2022 - May 2023</p>
-              </div>
-              <div class="experience-highlights">
-                <p>
-                  Mapped the patient booking funnel end-to-end, identified high-friction
-                  steps, and supported workflow changes that raised online scheduling
-                  conversion by 1.5%.
-                </p>
-                <p>
-                  Uncovered a 2.5% new-patient growth opportunity through scheduling
-                  trend analysis and recommendations around mammography self-scheduling.
-                </p>
-                <p>
-                  Partnered with UI/UX teams on Hotjar-informed A/B experiments that
-                  delivered measurable improvements in appointment conversion.
-                </p>
+                <ul class="experience-list">
+                  <li>Analyzed the patient booking funnel to identify friction points, contributing to a 1.5% lift in online scheduling conversion.</li>
+                  <li>Found a 2.5% new-patient growth opportunity through trend analysis and recommendations for mammography self-scheduling.</li>
+                  <li>Partnered with UI/UX teams on Hotjar-informed A/B testing that drove incremental appointment conversion improvements.</li>
+                </ul>
               </div>
             </article>
           </div>
@@ -577,90 +546,19 @@
             <h2 class="section-title">Contact</h2>
           </div>
 
-          <div class="contact-grid">
-            <div class="card reveal glass">
-              <h3 class="card-title">Find me</h3>
-              <div class="contact-items">
-                <a class="contact-item" href="mailto:mohity667@gmail.com">
-                  <span class="contact-icon" aria-hidden="true">
-                    <i class="fa-regular fa-envelope"></i>
-                  </span>
-                  <span>
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">mohity667@gmail.com</span>
-                  </span>
-                </a>
-                <a class="contact-item" href="https://www.linkedin.com/in/mohity667" target="_blank" rel="noreferrer">
-                  <span class="contact-icon" aria-hidden="true">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </span>
-                  <span>
-                    <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">www.linkedin.com/in/mohity667</span>
-                  </span>
-                </a>
-                <a class="contact-item" href="https://github.com/mohity667" target="_blank" rel="noreferrer">
-                  <span class="contact-icon" aria-hidden="true">
-                    <i class="fa-brands fa-github"></i>
-                  </span>
-                  <span>
-                    <span class="contact-label">GitHub</span>
-                    <span class="contact-value">https://github.com/mohity667</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            <div class="card reveal" data-delay="120">
-              <h3 class="card-title">Send a message</h3>
-              <!--
-                This form uses mailto so it works on GitHub Pages with no backend.
-                It will open the user's email client with a pre-filled message.
-              -->
-              <form class="form" id="contact-form" novalidate>
-                <label class="field">
-                  <span class="field-label">Your name</span>
-                  <input
-                    type="text"
-                    name="name"
-                    autocomplete="name"
-                    placeholder="Jane Doe"
-                    required
-                  />
-                </label>
-
-                <label class="field">
-                  <span class="field-label">Your email</span>
-                  <input
-                    type="email"
-                    name="email"
-                    autocomplete="email"
-                    placeholder="jane@email.com"
-                    required
-                  />
-                </label>
-
-                <label class="field">
-                  <span class="field-label">Message</span>
-                  <textarea
-                    name="message"
-                    rows="5"
-                    placeholder="Hi Mohit — I’d love to connect about…"
-                    required
-                  ></textarea>
-                </label>
-
-                <div class="form-actions">
-                  <button class="btn btn-primary" type="submit">
-                    <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
-                    <span>Email Me</span>
-                  </button>
-                  <p class="form-hint muted" id="form-hint">
-                    Opens your email app with the message pre-filled.
-                  </p>
-                </div>
-              </form>
-            </div>
+          <div class="contact-quick reveal">
+            <a class="contact-quick-link" href="mailto:mohity667@gmail.com" aria-label="Email Mohit">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+            <a class="contact-quick-link" href="https://www.linkedin.com/in/mohity667" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a class="contact-quick-link" href="https://github.com/mohity667" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="contact-quick-link" href="https://drive.google.com/file/d/1r4P_anV8XCZEkMlghAeHpl8TAOnRSTS8/view?usp=sharing" target="_blank" rel="noreferrer" aria-label="View resume">
+              <i class="fa-regular fa-file-lines"></i>
+            </a>
           </div>
         </div>
       </section>
