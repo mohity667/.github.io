@@ -61,9 +61,9 @@
           // Animate any skillbar span inside
           $$(`.bar span`, el).forEach((span) => {
             span.animate(
-              [{ transform: "scaleX(0.35)" }, { transform: "scaleX(1)" }],
+              [{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }],
               {
-                duration: 900,
+                duration: 650,
                 easing: "cubic-bezier(0.2, 0.7, 0.2, 1)",
                 fill: "forwards",
               }
@@ -133,6 +133,17 @@
     };
 
     tick();
+  }
+
+  // Profile image fallback (handles cases where you uploaded the image
+  // either at repo root or under ./assets)
+  const profileImg = document.querySelector(".profile-image");
+  if (profileImg) {
+    profileImg.addEventListener("error", () => {
+      if (profileImg.dataset.fallbackTried === "1") return;
+      profileImg.dataset.fallbackTried = "1";
+      profileImg.src = "./assets/LinkedIn%20Headshot.jpeg";
+    });
   }
 
   // Mailto form
