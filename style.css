@@ -631,6 +631,12 @@ textarea {
   font-weight: 800;
 }
 
+/* Keep internal section labels visually consistent */
+.about-panel .card-title,
+.impact-title {
+  margin-bottom: 10px;
+}
+
 .impact-panel {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -900,85 +906,84 @@ textarea {
   margin-top: 16px;
 }
 
-/* TIMELINE */
-.timeline {
-  position: relative;
+/* EXPERIENCE */
+.experience-showcase {
   margin-top: 14px;
   display: grid;
   gap: 14px;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 13px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, transparent, var(--accent), transparent);
-  opacity: 0.6;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 12px;
-  align-items: start;
-}
-
-.timeline-marker {
-  margin-top: 12px;
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 0 0 6px rgba(37, 208, 201, 0.15);
-  justify-self: center;
-}
-
-.timeline-card {
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
+.experience-card {
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
   border-radius: var(--radius);
-  padding: 16px;
+  background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bg-elev) 78%, transparent),
+      color-mix(in srgb, var(--bg) 92%, transparent)
+    ),
+    radial-gradient(
+      380px 160px at 8% 0%,
+      rgba(90, 167, 255, 0.12),
+      transparent 72%
+    );
   box-shadow: var(--shadow-soft);
+  padding: 16px;
 }
 
-.timeline-head {
+.experience-head {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  align-items: baseline;
   justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.experience-company {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.experience-meta {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.experience-role-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
   margin-bottom: 10px;
 }
 
-.timeline-title {
+.experience-role {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   letter-spacing: -0.02em;
 }
 
-.timeline-company {
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.timeline-dates {
+.experience-dates {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
-.bullets {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
+.experience-highlights {
   display: grid;
   gap: 8px;
+}
+
+.experience-highlights p {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  color: var(--muted);
 }
 
 /* PROJECTS */
@@ -1053,42 +1058,6 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-/* CERTIFICATIONS */
-.cert-grid {
-  margin-top: 14px;
-  display: grid;
-  gap: var(--gap);
-}
-
-.cert {
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
-  border-radius: var(--radius);
-  padding: 16px;
-  box-shadow: var(--shadow-soft);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px;
-  align-items: center;
-}
-
-.cert-badge {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  color: var(--accent-ink);
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: var(--shadow-soft);
-}
-
-.cert-title {
-  margin: 0;
-  font-weight: 900;
-  letter-spacing: -0.02em;
 }
 
 /* CONTACT */
@@ -1306,10 +1275,6 @@ textarea:focus {
   }
 
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .cert-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
