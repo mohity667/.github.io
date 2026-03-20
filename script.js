@@ -43,6 +43,15 @@
     });
   }
 
+  // Home links should always scroll to absolute top smoothly.
+  $$('a[href="#top"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      closeNav();
+    });
+  });
+
   // Intersection Observer reveals
   const revealEls = $$(".reveal");
   const barSpans = $$(".bar span");
@@ -89,9 +98,9 @@
   const typedEl = $("[data-typed]");
   if (typedEl) {
     const words = [
-      "I am an Analytics Engineer",
-      "I am a Data Analyst",
-      "I am a BI Analyst",
+      "Analytics Engineer",
+      "BI Analyst",
+      "Data Analyst",
     ];
 
     const typeSpeed = 26;
@@ -144,6 +153,102 @@
       profileImg.dataset.fallbackTried = "1";
       profileImg.src = "./assets/LinkedIn%20Headshot.jpeg";
     });
+  }
+
+  // Key impact cards rendered from reusable data array.
+  const impactGrid = $("#impact-grid");
+  if (impactGrid) {
+    const impactItems = [
+      {
+        icon: "🚀",
+        value: "30%+",
+        label: "Increase in Clinic Slot Utilization",
+        countTo: 30,
+        prefix: "",
+        suffix: "%+",
+      },
+      {
+        icon: "📉",
+        value: "18%",
+        label: "Reduction in No-Show Rates",
+        countTo: 18,
+        prefix: "",
+        suffix: "%",
+      },
+      {
+        icon: "⏱️",
+        value: "100+ hrs/month",
+        label: "Manual Work Eliminated",
+        countTo: 100,
+        prefix: "",
+        suffix: "+ hrs/month",
+      },
+      {
+        icon: "📈",
+        value: "+5% (17% → 22%)",
+        label: "Improvement in Follow-Up Rates",
+        countTo: 5,
+        prefix: "+",
+        suffix: "%",
+        detail: "(17% \u2192 22%)",
+      },
+      {
+        icon: "🤖",
+        value: "70%+",
+        label: "Faster Insight Delivery with AI Assistance",
+        countTo: 70,
+        prefix: "",
+        suffix: "%+",
+      },
+    ];
+
+    impactGrid.innerHTML = impactItems
+      .map(
+        (item) => `
+          <article class="impact-card" aria-label="${item.label}">
+            <div class="impact-icon" aria-hidden="true">${item.icon}</div>
+            <p class="impact-value">
+              <span class="impact-count" data-count-to="${item.countTo}" data-prefix="${item.prefix || ""}" data-suffix="${item.suffix || ""}">0</span>
+              ${item.detail ? `<span class="impact-detail">${item.detail}</span>` : ""}
+            </p>
+            <p class="impact-label">${item.label}</p>
+          </article>
+        `
+      )
+      .join("");
+
+    const counters = $$(".impact-count", impactGrid);
+    if (!prefersReducedMotion && "IntersectionObserver" in window) {
+      const counterIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const to = Number(el.dataset.countTo || 0);
+            const prefix = el.dataset.prefix || "";
+            const suffix = el.dataset.suffix || "";
+            const duration = 900;
+            const start = performance.now();
+
+            const step = (now) => {
+              const t = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - t, 3);
+              const current = Math.round(to * eased);
+              el.textContent = `${prefix}${current}${suffix}`;
+              if (t < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+            counterIO.unobserve(el);
+          });
+        },
+        { threshold: 0.3 }
+      );
+      counters.forEach((c) => counterIO.observe(c));
+    } else {
+      counters.forEach((el) => {
+        el.textContent = `${el.dataset.prefix || ""}${el.dataset.countTo || "0"}${el.dataset.suffix || ""}`;
+      });
+    }
   }
 
   // Mailto form

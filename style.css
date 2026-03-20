@@ -612,6 +612,104 @@ textarea {
 }
 
 /* ABOUT */
+.about-impact-stack {
+  display: grid;
+  gap: var(--gap);
+  margin-top: 14px;
+}
+
+.about-panel {
+  padding: 16px;
+}
+
+.section-kicker {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent-2) 68%, var(--muted) 32%);
+  font-weight: 800;
+}
+
+.impact-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bg-elev) 75%, transparent),
+      color-mix(in srgb, var(--bg) 90%, transparent)
+    ),
+    radial-gradient(
+      520px 220px at 10% 10%,
+      rgba(90, 167, 255, 0.14),
+      transparent 70%
+    );
+  padding: 16px;
+}
+
+.impact-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.2rem + 1.2vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.impact-subtitle {
+  margin: 6px 0 0;
+}
+
+.impact-grid {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.impact-card {
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+  padding: 14px 12px;
+  text-align: center;
+  transition: transform 140ms ease, box-shadow 140ms ease,
+    border-color 140ms ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-2px) scale(1.01);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border) 65%);
+  box-shadow: 0 10px 24px rgba(37, 208, 201, 0.14);
+}
+
+.impact-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.impact-value {
+  margin: 8px 0 4px;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.impact-detail {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.58em;
+  color: var(--muted);
+  -webkit-text-fill-color: var(--muted);
+}
+
+.impact-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 .about-grid {
   display: grid;
   gap: var(--gap);
@@ -1264,10 +1362,22 @@ body.nav-open .nav-links a {
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1100px) {
   .skills-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .impact-grid .impact-card:nth-child(5) {
+    grid-column: 2 / span 2;
   }
 }
