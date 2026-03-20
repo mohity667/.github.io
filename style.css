@@ -680,49 +680,70 @@ textarea {
 }
 
 /* SKILLS */
-.skills-modern {
+.skills-grid {
   margin-top: 14px;
-  max-width: 900px;
-  margin-inline: auto;
   display: grid;
-  gap: 18px;
+  gap: var(--gap);
 }
 
-.skill-row {
+.skill-card {
+  border-radius: var(--radius);
+  padding: 16px 14px;
+}
+
+.skill-category {
+  margin: 0 0 10px;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+}
+
+.skill-list-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: grid;
   gap: 10px;
 }
 
-.skill-row + .skill-row {
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-}
-
-.skill-row-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+.skill-row-skill {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
   align-items: center;
+  padding: 8px 8px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev) 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  transition: transform 120ms ease, box-shadow 120ms ease,
+    border-color 120ms ease, background 120ms ease;
 }
 
-.skill-category {
-  margin: 0;
-  font-size: 1.03rem;
-  letter-spacing: -0.01em;
+.skill-row-skill:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  border-color: color-mix(in srgb, var(--border) 60%, var(--accent) 40%);
+  background: color-mix(in srgb, var(--bg-elev-2) 85%, transparent);
 }
 
-.skill-level {
-  color: var(--muted);
-  font-weight: 800;
-  font-size: 0.92rem;
-  border: 1px solid var(--border);
+.skill-icon {
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
-  padding: 6px 10px;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--bg-elev-2) 90%, transparent);
+  color: var(--accent);
+  font-size: 0.9rem;
 }
 
-.skill-list {
-  margin: 0;
-  color: var(--muted);
+.skill-main {
+  display: grid;
+  gap: 6px;
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .bar {
@@ -1170,6 +1191,10 @@ textarea:focus {
 
   .about-grid {
     grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .projects-grid {
